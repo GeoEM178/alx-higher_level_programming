@@ -8,17 +8,17 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *slow = list;
-	listint_t *fast = list;
+	listint_t *batia = list;
+	listint_t *sarii = list;
 
 	if (!list)
 		return (0);
 
-	while (slow && fast && fast->next)
+	while (batia && sarii && sarii->next)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
+		batia = batia->next;
+		sarii = sarii->next->next;
+		if (batia == sarii)
 			return (1);
 	}
 
