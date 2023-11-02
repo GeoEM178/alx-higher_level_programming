@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def print_arg(*argv):
+def print_arg(argv):
     num = len(argv) -1
     if num == 0:
         print("{:d} arguments.".format(num))
@@ -8,7 +8,7 @@ def print_arg(*argv):
         if num == 1:
             print("{:d} argument:".format(num))
             print("{:d}: {:s}".format(num,argv))
-        else:
+        elif num > 1:
             print("{:d} arguments:".format(num))
         i = 1
         while i <= num:
