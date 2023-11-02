@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-def print_last_digit(number):
+def print_akherkm(number):
     if number < 0:
-        last_digit = number % -(10)
-        print(-(last_digit), end='')
+        akherkm = number % -(10)
+        print(-(akherkm), end='')
     else:
-        last_digit = number % 10
-        print(last_digit, end='')
-    return abs(last_digit)
+        akherkm = number % 10
+        print(akherkm, end='')
+    return abs(akherkm)
