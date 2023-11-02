@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-def print_arg(argv):
-    num = len(argv)
+def print_arg(*argv):
+    num = len(argv) -1
     if num == 0:
         print("{:d} arguments.".format(num))
         return
