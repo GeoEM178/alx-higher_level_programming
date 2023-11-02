@@ -2,22 +2,22 @@
 from calculator_1 import add, sub, mul, div
 
 
-def arg_calc(argv):
+def calcTheArgu(argv):
     n = len(argv) - 1
     if n != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: ./100-my_calculator.py <a> <mathOperator> <b>")
         exit(1)
     a = int(argv[1])
-    op = argv[2]
+    mathOp = argv[2]
     b = int(argv[3])
-    if op == '+':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, add(a, b)))
-    elif op == '-':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, sub(a, b)))
-    elif op == '*':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, mul(a, b)))
-    elif op == '/':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, div(a, b)))
+    if mathOp == '+':
+        print("{:d} {:s} {:d} = {:d}".format(a, mathOp, b, add(a, b)))
+    elif mathOp == '-':
+        print("{:d} {:s} {:d} = {:d}".format(a, mathOp, b, sub(a, b)))
+    elif mathOp == '*':
+        print("{:d} {:s} {:d} = {:d}".format(a, mathOp, b, mul(a, b)))
+    elif mathOp == '/':
+        print("{:d} {:s} {:d} = {:d}".format(a, mathOp, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
@@ -25,4 +25,4 @@ def arg_calc(argv):
 
 if __name__ == "__main__":
     import sys
-    arg_calc(sys.argv)
+    calcTheArgu(sys.argv)
