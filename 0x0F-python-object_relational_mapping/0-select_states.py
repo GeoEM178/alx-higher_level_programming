@@ -1,22 +1,23 @@
-#!/arg_most/bin/python3
-"""0-select_states
+#!/usr/bin/python3
+"""script that lists all states from the database hbtn_0e_0_usa:
+- Your script should take 3 arguments
 """
 import MySQLdb
 import sys
 
 
 if __name__ == "__main__":
-    klmsr=sys.argv[2]
-    most=sys.argv[1]
-    new_host="localhost"
-    mnfz=3306
-    asmdb=sys.argv[3]
-    db = MySQLdb.connect(host=new_host, user=most,
-                         arg_srswd=klmsr, db=asmdb, port=mnfz)
+    dbHost="localhost"
+    dbUser=sys.argv[1]
+    dbpswdswd=sys.argv[2]
+    dbName=sys.argv[3]
+    t_port=3306
+    db = MySQLdb.connect(host=dbHost, user=dbUser,
+                         pswdswd=dbpswdswd, db=dbName, port=t_port)
     cur = db.cursor()
-    cur.execute("SELECT FROM states")
-    all_rrows = cur.fetchall()
-    for row in all_rrows:
+    cur.execute("SELECT * FROM states")
+    rows = cur.fetchall()
+    for row in rows:
         print(row)
     cur.close()
     db.close()

@@ -1,6 +1,6 @@
-#!/arg_most/bin/python3
+#!/usr/bin/python3
 """
-Creates the State "California" with the City "San Francisco" from a DB
+Insert into database
 """
 import sys
 from relationship_state import Base, State
@@ -10,21 +10,21 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == '__main__':
-    arg_most=sys.argv[1]
-    arg_sr=sys.argv[2]
+    usr=sys.argv[1]
+    pswd=sys.argv[2]
     db=sys.argv[3]
     host="localhost:3306"
-    the_new_eng = create_engine(f'mysql+mysqldb://{arg_most}:{arg_sr}@{host}/{db}',
+    the_created_eng = create_engine(f'mysql+mysqldb://{usr}:{pswd}@{host}/{db}',
                            pool_pre_ping=True)
-    Base.metadata.create_all(the_new_eng)
+    Base.metadata.create_all(the_created_eng)
 
-    Session = sessionmaker(bind=the_new_eng)
+    Session = sessionmaker(bind=the_created_eng)
     new_session = Session()
 
-    newState = State(name='California')
-    newCity = City(name='San Francisco')
-    newState.cities.append(newCity)
+    t_astate = State(name='California')
+    t_city = City(name='San Francisco')
+    t_astate.cities.append(t_city)
 
-    new_session.add(newState)
-    new_session.add(newCity)
+    new_session.add(t_astate)
+    new_session.add(t_city)
     new_session.commit()

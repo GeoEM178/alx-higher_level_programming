@@ -1,4 +1,4 @@
-#!/arg_most/bin/python3
+#!/usr/bin/python3
 """
 city class that inherits from Base and connect to city table
 """
@@ -8,10 +8,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 class City(Base):
-    """_summary_
-
-    Args:
-        Base (_type_): _description_
+    """
+    City Class that extends Base model
     """
     __tablename__ = 'cities'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)

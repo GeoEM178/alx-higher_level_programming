@@ -1,5 +1,5 @@
-#!/arg_most/bin/python3
-""" prints the State object with the name arg_srsed as argument from the database
+#!/usr/bin/python3
+""" prints the State object with the name pswdsed as argument from the database
 """
 import sys
 from model_state import Base, State
@@ -8,14 +8,14 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    arg_most = sys.argv[1]
-    arg_sr = sys.argv[2]
+    usr = sys.argv[1]
+    pswd = sys.argv[2]
     host="localhost"
     db=sys.argv[3]
-    the_new_eng = create_engine(f'mysql+mysqldb://{arg_most}:{arg_sr}@{host}/{db}', pool_pre_ping=True)
-    Base.metadata.create_all(the_new_eng)
-    Session = sessionmaker(bind=the_new_eng)
+    the_created_eng = create_engine(f'mysql+mysqldb://{usr}:{pswd}@{host}/{db}', pool_pre_ping=True)
+    Base.metadata.create_all(the_created_eng)
+    Session = sessionmaker(bind=the_created_eng)
     session = Session()
-    for the_obj in session.query(State).filter(State.name.like('%a%')):
-        session.delete(the_obj)
+    for t_obj in session.query(State).filter(State.name.like('%a%')):
+        session.delete(t_obj)
     session.commit()
