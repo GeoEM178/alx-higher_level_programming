@@ -1,6 +1,6 @@
 #!/bin/bash
 # get data by bytes only
-if ( $1 ) then
+if ( $# -gt 0) then
     curl -s "$1" | wc -c
 fi
 
