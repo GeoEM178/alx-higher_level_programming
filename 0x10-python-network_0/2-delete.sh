@@ -1,7 +1,6 @@
 #!/bin/bash
 # send with delete reqdisable prog
-if ( $# -lt 1 ) then
-    echo "No arguments supplied"
-    exit 1
+if ( $1 ) then
+    curl -sX DELETE "$1"
 fi
-curl -sX DELETE "$1"
+

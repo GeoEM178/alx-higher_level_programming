@@ -1,7 +1,6 @@
 #!/bin/bash
 # get data by bytes only
-if ( $# -lt 1 ) then
-    echo "No arguments supplied"
-    exit 1
+if ( $1 ) then
+    curl -s "$1" | wc -c
 fi
-curl -s "$1" | wc -c
+
