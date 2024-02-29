@@ -3,4 +3,3 @@
 if ( $# -gt 0 ) then
     curl -sX DELETE "$1"
 fi
-
